@@ -17,13 +17,13 @@ with open('riskResult.csv', encoding='utf-8-sig') as csvfile:
         sum = get_value_sev + get_value_prob
 
         if sum > 15:
-            print("Major bug or issue - sending email to sysadmin, infosec chief, and IT manager.")
+            print("ID:", row['ID'], "Major bug or issue - sending email to sysadmin, infosec chief, and IT manager.")
 
         elif 5 <= sum <= 15:
-            print("Issue will require increase in security and access controls. Adding to Backlog for further planning.")
+            print("ID:", row['ID'], "Issue will require increase in security and access controls. Adding to Backlog for further planning.")
 
         elif 0 <= sum < 5:
-            print("Minor issue likely, increasing security is not recommended due to costs involved")
+            print("ID:", row['ID'], "Minor issue likely, increasing security is not recommended due to costs involved")
 
         else:
-            print("Logging Error - check the data provided as this threat value is invalid.")
+            print("ID:", row['ID'], "Logging Error - check the data provided as this threat value is invalid.")
